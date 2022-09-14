@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DBFirstEF.GIANGDAY>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAMH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOCKY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TUNGAY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DENNGAY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAMH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOCKY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TUNGAY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DENNGAY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.MALOP }, new { @class = "btn btn-primary" }) &nbsp;&nbsp;&nbsp;
+            @Html.ActionLink("Details", "Details", new { id = item.MALOP }, new { @class = "btn btn-success" }) &nbsp;&nbsp;&nbsp;
+            @Html.ActionLink("Delete", "Delete", new { id = item.MALOP }, new { @class = "btn btn-danger" }) &nbsp;&nbsp;&nbsp;
+        </td>
+    </tr>
+}
+
+</table>
